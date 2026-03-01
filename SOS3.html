@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Risk It All 😈</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #1a0000, #000000);
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 55px;
+      margin-top: 40px;
+      animation: fadeIn 2s ease-in;
+    }
+
+    h2 {
+      margin-top: 60px;
+      color: crimson;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 16px;
+      background: crimson;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 10px;
+      box-shadow: 0 0 15px crimson;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: darkred;
+      transform: scale(1.1);
+      box-shadow: 0 0 25px red;
+    }
+
+    .bigDecision {
+      font-size: 22px;
+      padding: 20px 40px;
+      margin-top: 40px;
+      animation: pulse 2s infinite;
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 20px;
+      border: none;
+      text-align: center;
+    }
+
+    #redFlagBar {
+      width: 70%;
+      height: 20px;
+      background: #333;
+      margin: 20px auto;
+      border-radius: 20px;
+    }
+
+    #redFlagFill {
+      height: 100%;
+      width: 0%;
+      background: crimson;
+      border-radius: 20px;
+      transition: 0.5s;
+      box-shadow: 0 0 15px red;
+    }
+
+    .section {
+      margin: 70px 0;
+      animation: fadeIn 2s ease-in;
+    }
+
+    iframe {
+      margin-top: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px crimson;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px crimson; }
+      50% { box-shadow: 0 0 30px red; }
+      100% { box-shadow: 0 0 10px crimson; }
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>This Could Ruin Your Peace 😌</h1>
+<p>You like red flags? I come in HD.</p>
+
+<div class="section">
+  <h2>🎵 Emotional Damage Soundtrack</h2>
+
+  <!-- Replace VIDEO_ID below -->
+  <iframe width="350" height="200"
+    src="https://www.youtube.com/embed/KuqP-3wCEVk&list=RDKuqP-3wCEVk&start_radio=1"
+    title="Wait For U Instrumental"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+
+  <p style="font-size: 12px; opacity: 0.7;">
+    “Wait for U” © Future, Drake, Tems.
+    All music rights belong to their respective copyright owners.
+    This site is for entertainment purposes only.
+  </p>
+</div>
+
+<div class="section">
+  <h2>🚩 Toxicity Meter</h2>
+  <div id="redFlagBar">
+    <div id="redFlagFill"></div>
+  </div>
+  <button onclick="addToxicity(20)">Late Night Texts</button>
+  <button onclick="addToxicity(30)">Mixed Signals</button>
+  <button onclick="addToxicity(50)">Jealous For No Reason</button>
+</div>
+
+<div class="section">
+  <h2>🧠 Personality Compatibility Test</h2>
+  <p>If I leave you on seen, you:</p>
+  <button onclick="answerQuiz(10)">Cry</button>
+  <button onclick="answerQuiz(20)">Double Text</button>
+  <button onclick="answerQuiz(30)">Act Nonchalant</button>
+  <button onclick="answerQuiz(40)">Plot Revenge</button>
+  <p id="quizScore"></p>
+</div>
+
+<div class="section">
+  <h2>📩 Application</h2>
+  <input type="text" id="name" placeholder="Your Name"><br><br>
+  <button onclick="apply()">Submit Application</button>
+  <p id="applicationResult"></p>
+</div>
+
+<div class="section">
+  <h2>The Final Decision 😈</h2>
+
+  <button class="bigDecision" onclick="finalAnswer(true)">
+    Yes… I’ll Be Your Sneaky Link 😌
+  </button>
+
+  <button style="font-size:12px; padding:8px 15px; opacity:0.6;"
+          onclick="finalAnswer(false)">
+    No. I Choose Peace.
+  </button>
+
+  <p id="finalResult" style="margin-top: 20px; font-size: 20px;"></p>
+</div>
+
+<script>
+  let toxicity = 0;
+
+  function addToxicity(amount) {
+    toxicity += amount;
+    if (toxicity > 100) toxicity = 100;
+    document.getElementById("redFlagFill").style.width = toxicity + "%";
+    if (toxicity == 100) alert("Villain Mode Unlocked 😈");
+  }
+
+  let score = 0;
+
+  function answerQuiz(points) {
+    score += points;
+    document.getElementById("quizScore").innerText =
+      "Compatibility Score: " + score + "% with Poor Decisions 😭";
+  }
+
+  function apply() {
+    let name = document.getElementById("name").value;
+    document.getElementById("applicationResult").innerText =
+      "Application received, " + name + ". Emotional damage loading...";
+  }
+
+  function finalAnswer(choice) {
+
+    const formID = "1FAIpQLSdc1WjTrPkPfJ8c02P2D4KHque1TpVUREy_-F0tu8hltuj4Eg";
+    const entryID = "entry.497387467";
+
+    let value = choice ? 
+      "YES - She chose chaos 😈" : 
+      "NO - She chose peace 👀";
+
+    let url = "https://docs.google.com/forms/d/e/" 
+              + formID + "/formResponse?" 
+              + entryID + "=" + encodeURIComponent(value);
+
+    fetch(url, { method: "POST", mode: "no-cors" });
+
+    if (choice) {
+      document.getElementById("finalResult").innerText =
+        "You have chosen chaos. This is now canon 😈";
+    } else {
+      document.getElementById("finalResult").innerText =
+        "You chose peace… but peace is boring 👀";
+    }
+  }
+</script>
+
+</body>
+</html>
